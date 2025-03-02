@@ -1,13 +1,11 @@
 package com.searchtests;
 
 import com.helpclasses.Product;
-import com.helpmethods.MyReporter;
 import com.pages.HomePage;
 import com.pages.SearchPage;
 import com.testbases.TestBase;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -61,7 +59,7 @@ public class TestSortAlphabeticallyAscending extends TestBase {
                 minProduct = p;
             }
         }
-        MyReporter.log("Max ipod price: " + maxProduct.toString());
-        MyReporter.log("Min ipod price: " + minProduct.toString());
+        Reporter.log("Max ipod price: " + maxProduct.toString());
+        Reporter.log("Min ipod price: " + minProduct.toString());
     }
 }

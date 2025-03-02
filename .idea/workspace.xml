@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4892f72-5cbc-4151-9626-17e8f311f8a4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helpmethods/MyReporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="XML Properties File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,13 +43,73 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml.executor": "Run",
+    "TestNG.RunWithReports.executor": "Run",
     "TestNG.TestSortAlphabeticallyAscending.executor": "Run",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite"
+    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/test-output"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\test" />
+      <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.RunWithReports">
+    <configuration name="RunWithReports" type="TestNG">
+      <module name="untitled" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\test-output" />
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners>
+        <listener class="org.testng.reporters.EmailableReporter2" />
+      </listeners>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSortAlphabeticallyAscending" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="untitled" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.searchtests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.searchtests" />
+      <option name="MAIN_CLASS_NAME" value="com.searchtests.TestSortAlphabeticallyAscending" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="TestNG.RunWithReports" />
+      <item itemvalue="TestNG.TestSortAlphabeticallyAscending" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestSortAlphabeticallyAscending" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

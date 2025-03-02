@@ -1,7 +1,6 @@
 package com.pages;
 
 import com.helpclasses.Product;
-import com.helpmethods.MyReporter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +9,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Reporter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,15 +33,15 @@ public class SearchPage extends PageBase{
     }
 
     public String getPageContentTitle() {
-        MyReporter.log("Getting page content title...");
+        Reporter.log("Getting page content title...");
         return webDriverWait.until(ExpectedConditions.visibilityOf(pageContentTitle)).getText();
     }
 
     public void clickListButton(){
-        MyReporter.log("Clicking list button...");
+        Reporter.log("Clicking list button...");
         webDriverWait.until(ExpectedConditions.elementToBeClickable(listButton)).click();
         webDriverWait.until(ExpectedConditions.attributeContains(listButton,"class","active"));
-        MyReporter.log("List button was clicked.");
+        Reporter.log("List button was clicked.");
     }
 
     public List<WebElement> getProductsElements(){
@@ -51,7 +51,7 @@ public class SearchPage extends PageBase{
     }
 
     public boolean isProductsListView(){
-        MyReporter.log("Getting products as elements...");
+        Reporter.log("Getting products as elements...");
         List<WebElement> productsElements = getProductsElements();
         for(WebElement e: productsElements)
             if(!e.getAttribute("class").contains("product-list"))
@@ -87,7 +87,7 @@ public class SearchPage extends PageBase{
             String description = productElement.findElement(By.xpath("//div[1]/p[1]")).getText();
             String spanInsidePrice = productElement.findElement(By.xpath("//div[1]/p[2]/span"))
                     .getAttribute("innerHTML");
-            MyReporter.log("spanInsidePrice = "+ spanInsidePrice);
+            Reporter.log("spanInsidePrice = "+ spanInsidePrice);
             double price = Double.parseDouble(
                     productElement.findElement(
                             By.xpath("//div[1]/p[2]")).getText().replace(spanInsidePrice,"")

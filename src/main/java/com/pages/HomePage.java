@@ -1,12 +1,12 @@
 package com.pages;
 
-import com.helpmethods.MyReporter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Reporter;
 
 public class HomePage extends PageBase{
 
@@ -24,17 +24,17 @@ public class HomePage extends PageBase{
     }
 
     public void passSearchText(String keyword){
-        MyReporter.log(String.format("Passing '%s' to search box...",keyword));
+        Reporter.log(String.format("Passing '%s' to search box...",keyword));
         webDriverWait.until(ExpectedConditions.visibilityOf(searchBox));
         searchBox.sendKeys(keyword);
         webDriverWait.until(ExpectedConditions.attributeToBe(searchBox,"value",keyword));
-        MyReporter.log(String.format("'%s' word passed to search box",keyword));
+        Reporter.log(String.format("'%s' word passed to search box",keyword));
     }
 
     public void clickSearchButton(){
-        MyReporter.log(String.format("Clicking search button..."));
+        Reporter.log(String.format("Clicking search button..."));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(searchButton)).click();
-        MyReporter.log("Search button clicked");
+        Reporter.log("Search button clicked");
     }
 
     public void search(String keyword){
