@@ -5,15 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4892f72-5cbc-4151-9626-17e8f311f8a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/1740580124-sortIPodListByName.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tmp/1740581258-sortIPodListByName.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helpmethods/MyReporter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml.executor": "Run",
-    "TestNG.RunWithReports.executor": "Run",
-    "TestNG.TestSortAlphabeticallyAscending.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/test-output"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RunWithReports.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestSortAlphabeticallyAscending.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/test-output&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\test" />
@@ -120,5 +122,8 @@
       <updated>1740574742942</updated>
     </task>
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="Jenkinsfile" />
   </component>
 </project>

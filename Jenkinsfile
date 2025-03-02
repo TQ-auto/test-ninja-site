@@ -3,19 +3,16 @@ pipeline {
   agent any 
 
     stages {
-      stage("build") {
+      stage('build') {
         steps {
           echo 'building the application...'
           echo 'Apply changes...'
-          script{
-            def test = 2 + 2 >3 ? 'cool' : 'not cool'
-            echo test
-          }
         }
       }
-      stage("test"){
+      stage('test'){
         steps{
           echo 'testing the application...'
+          sh './mvn test'
         }
       }
       stage("deploy"){
