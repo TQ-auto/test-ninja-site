@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class SearchPage extends PageBase{
@@ -26,6 +27,8 @@ public class SearchPage extends PageBase{
 
     @FindBy(how = How.ID, using = "input-sort")
     WebElement sortDropdown;
+
+    By productDiv = By.xpath("//*[@id='content']/div[3]/div");
 
     public SearchPage(WebDriver driver){
         super(driver);
@@ -45,34 +48,45 @@ public class SearchPage extends PageBase{
     }
 
     public List<WebElement> getProductsElements(){
-        List<WebElement> productsElements =
-                driver.findElements(By.xpath("//*[@id=\"content\"]/div[3]/div"));
-        return productsElements;
+        return driver.findElements(productDiv);
     }
 
     public boolean isProductsListView(){
         Reporter.log("Getting products as elements...");
         List<WebElement> productsElements = getProductsElements();
-        for(WebElement e: productsElements)
+        for(WebElement e: productsElements){
             if(!e.getAttribute("class").contains("product-list"))
                 return false;
+        }
         return true;
     }
 
     public void sortProductsByName(){
         Select dropdown = new Select(webDriverWait.until(ExpectedConditions.visibilityOf(sortDropdown)));
         dropdown.selectByVisibleText("Name (A - Z)");
+        webDriverWait.until(ExpectedConditions.urlContains("order=DESC"));
     }
 
     public boolean isSortedByName(){
         sortProductsByName();
         List<WebElement> productsElements = getProductsElements();
-        String temp = "";
-        for(WebElement e : productsElements){
-            String txtToBeCompared = e.findElement(By.xpath("//div[1]/h4/a")).getText();
-            if(txtToBeCompared.compareTo(temp) < 0 )
+        if (productsElements.isEmpty() || productsElements.size() == 1){
+            return true;
+        }
+        Iterator<WebElement> iter = productsElements.iterator();
+        WebElement current, previous= iter.next();
+        int nthChild=2;// number of div tag child
+        while (iter.hasNext()){
+            current = iter.next();
+            String currentProductDivXpath = "//*[@id='content']/div[3]/div["+nthChild+"]//div[1]/h4/a";
+            String currentName = current.findElement(By.xpath(currentProductDivXpath)).getText();
+            String previousProductDivXpath = "//*[@id='content']/div[3]/div["+(nthChild-1)+"]//div[1]/h4/a";
+            String previousName = previous.findElement(By.xpath(previousProductDivXpath)).getText();
+            if(previousName.compareTo(currentName) > 0){
                 return false;
-            temp = txtToBeCompared;
+            }
+            previous = current;
+            nthChild++;
         }
         return true;
     }
@@ -87,7 +101,6 @@ public class SearchPage extends PageBase{
             String description = productElement.findElement(By.xpath("//div[1]/p[1]")).getText();
             String spanInsidePrice = productElement.findElement(By.xpath("//div[1]/p[2]/span"))
                     .getAttribute("innerHTML");
-            Reporter.log("spanInsidePrice = "+ spanInsidePrice);
             double price = Double.parseDouble(
                     productElement.findElement(
                             By.xpath("//div[1]/p[2]")).getText().replace(spanInsidePrice,"")
