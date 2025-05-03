@@ -1,10 +1,11 @@
 pipeline {
   agent any 
     stages {
-      stage('Checkout Code'{
+      stage('Checkout Code'){
         steps{
           echo 'Checkout Code'
-          git(url: 'https://github.com/TQ-auto/test-ninja-site.git', branch: 'main')
+          git branch: 'main',
+            url: 'https://github.com/TQ-auto/test-ninja-site.git'
         }
       }
       stage('build') {
