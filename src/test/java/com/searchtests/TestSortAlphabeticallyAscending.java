@@ -1,65 +1,52 @@
 package com.searchtests;
 
-import com.helpclasses.Product;
+import com.enums.OrderingBy;
 import com.pages.HomePage;
 import com.pages.SearchPage;
 import com.testbases.TestBase;
-import org.testng.Assert;
-import org.testng.Reporter;
+import static org.testng.Assert.assertTrue;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.util.List;
 
 public class TestSortAlphabeticallyAscending extends TestBase {
 
     HomePage homePage;
     SearchPage searchPage;
-    String keyword = "iPod";
 
     @BeforeTest
     public void setUpTest(){
         homePage = new HomePage(driver);
     }
 
-    @Test(description = "Search for 'iPod' product",priority = 1)
-    public void searchForIPodProduct(){
+    @Parameters({"search-term"})
+    @Test(description = "Search for a product",priority = 1)
+    public void searchForProduct(@Optional("iPod") String searchTerm){
         homePage.navigate();
-        homePage.search(keyword);
+        homePage.search(searchTerm);
         searchPage = new SearchPage(driver);
-        Assert.assertTrue(searchPage.getPageContentTitle().contains(keyword),
-                String.format("Failed to search for %s",keyword));
+        assertTrue(searchPage.getPageContentTitle().contains(searchTerm),
+                String.format("Failed to search for %s",searchTerm));
     }
 
-    @Test(description = "List 'iPod' products", priority = 2)
-    public void listIPodProducts(){
+    @Test(description = "Test list view products for searched term", priority = 2)
+    public void testListProductsView(){
         searchPage.clickListButton();
-        Assert.assertTrue(searchPage.isProductsListView(),"Products list wasn't changed to list view.");
+        assertTrue(searchPage.isProductsListView(),"Products list wasn't changed to list view.");
     }
 
-    @Test(description = "Sort 'iPod' list by name",priority = 3)
-    public void sortIPodListByName(){
-        Assert.assertTrue(searchPage.isSortedByName(),"Products not sorted by name.");
+    @Test(description = "Test sorted searched list by name ascending",priority = 3)
+    public void testSortedListByNameAsc(){
+        searchPage.sortProductsByName(OrderingBy.ASC);
+        assertTrue(searchPage.isSortedByNameAscending(OrderingBy.ASC),"Products not sorted by name from A to Z.");
     }
 
-    @Test(description = "Ipod storage", priority = 4)
-    public void ipodStorage(){
-        List<Product> productsList = searchPage.getProducts();
-        double max = productsList.get(0).getPrice();
-        double min = productsList.get(0).getPrice();
-        Product minProduct = productsList.get(0);
-        Product maxProduct = productsList.get(0);
-        for(Product p: productsList){
-            if(p.getPrice() > max) {
-                max = p.getPrice();
-                maxProduct = p;
-            }
-            if(p.getPrice() < min){
-                min = p.getPrice();
-                minProduct = p;
-            }
-        }
-        Reporter.log("Max ipod price: " + maxProduct.toString());
-        Reporter.log("Min ipod price: " + minProduct.toString());
+    @Test(description = "Test sorted searched list by name descending",priority = 4)
+    public void testSortedListByNameDesc(){
+        searchPage.sortProductsByName(OrderingBy.DESC);
+        assertTrue(searchPage.isSortedByNameAscending(OrderingBy.DESC),"Products not sorted by name from Z to A.");
     }
+
 }

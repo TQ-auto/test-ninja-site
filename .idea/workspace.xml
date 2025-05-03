@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4892f72-5cbc-4151-9626-17e8f311f8a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/enums/OrderingBy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/1740580124-sortIPodListByName.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/1740580124-sortIPodListByName.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/1740581258-sortIPodListByName.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/1740581258-sortIPodListByName.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/helpclasses/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/helpclasses/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/PageBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/SearchPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,14 +26,27 @@
         <option value="Class" />
         <option value="XML Properties File" />
         <option value="Dockerfile" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TQ-auto"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/tq-auto/test-ninja-site.git",
+    "accountId": "7f95c755-3323-4da1-9f56-39a01db077ea"
+  }
+}]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -45,6 +58,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Maven.untitled [clean,install].executor": "Run",
     "Maven.untitled [clean].executor": "Run",
     "Maven.untitled [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -57,7 +71,10 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/test-output"
+    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -66,10 +83,42 @@
       <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\test\resources" />
       <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml">
+  <component name="RunManager" selected="TestNG.RunWithReports">
+    <configuration name="untitled [clean,install]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="untitled" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -137,6 +186,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Maven.untitled [clean,install]" />
       <item itemvalue="TestNG.RunWithReports" />
       <item itemvalue="TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml" />
       <item itemvalue="TestNG.TestSortAlphabeticallyAscending.sortIPodListByName" />
@@ -144,6 +194,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.untitled [clean,install]" />
         <item itemvalue="TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml" />
         <item itemvalue="TestNG.TestSortAlphabeticallyAscending" />
         <item itemvalue="TestNG.TestSortAlphabeticallyAscending.sortIPodListByName" />
@@ -164,23 +215,29 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="Jenkinsfile" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="9" />
+          <url>file://$PROJECT_DIR$/src/test/java/com/pages/SearchPage.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
