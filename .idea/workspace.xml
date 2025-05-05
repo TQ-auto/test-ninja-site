@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4892f72-5cbc-4151-9626-17e8f311f8a4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/enums/OrderingBy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/helpclasses/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/helpclasses/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/PageBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/PageBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/searchtests/TestSortAlphabeticallyAscending.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/testbases/TestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "TQ-auto"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;TQ-auto&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tq-auto/test-ninja-site.git",
-    "accountId": "7f95c755-3323-4da1-9f56-39a01db077ea"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tq-auto/test-ninja-site.git&quot;,
+    &quot;accountId&quot;: &quot;7f95c755-3323-4da1-9f56-39a01db077ea&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -56,27 +50,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.untitled [clean,install].executor": "Run",
-    "Maven.untitled [clean].executor": "Run",
-    "Maven.untitled [test].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml.executor": "Run",
-    "TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml.executor": "Run",
-    "TestNG.RunWithReports.executor": "Run",
-    "TestNG.TestSortAlphabeticallyAscending.executor": "Run",
-    "TestNG.TestSortAlphabeticallyAscending.sortIPodListByName.executor": "Run",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.untitled [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.untitled [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.untitled [test].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.RunWithReports.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestSortAlphabeticallyAscending.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TestSortAlphabeticallyAscending.sortIPodListByName.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Taq/Downloads/TestNinjaSite/PaloAltoInterview/TestNinjaSite/src/test/resources/testng.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Taq\Downloads\TestNinjaSite\PaloAltoInterview\TestNinjaSite\src\test" />

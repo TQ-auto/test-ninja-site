@@ -7,7 +7,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,67 +29,64 @@ public abstract class TestBase {
 
     protected WebDriver driver;
     protected WebDriverWait webDriverWait;
-    // Used to when running locally
-    protected String url = "http://localhost:4444/wd/hub";
-    // To run tests locally, turn this flag on (True = running locally)
-    final boolean DEBUG_FLAG = false;
+    // Url for selenium grid hub
+    private static final String URL = "http://localhost:4444/wd/hub";
+    // To run tests locally, turn this flag on (true = running locally / false = remotely)
+    private static final boolean DEBUG_LOCALLY_FLAG = false;
 
+    // For local runs only
     @BeforeClass
-    protected void SetUpAutoSetupChrome(){
+    @Parameters("browser")
+    protected void autoSetupDriver(@Optional("chrome")String browser) throws Exception {
         // If DEBUG mode is on, run this
-        if(DEBUG_FLAG)
-            // Webdrivermanager should be run on a @BeforeClass for the driver to work on the next step.
-            WebDriverManager.chromedriver().setup();
-    }
-
-    @BeforeTest
-    protected void setUpLocalTestBase(){
-        // If DEBUG mode is on, run this
-        if(DEBUG_FLAG){
-            ChromeOptions chromeOptions = new ChromeOptions();
-            Reporter.log("Launching browser...");
-            driver = new ChromeDriver(chromeOptions);
-            Reporter.log("browser launched.");
-            webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            driver.manage().window().maximize();
+        if(DEBUG_LOCALLY_FLAG) {
+            switch (browser) {
+                case "chrome":
+                    WebDriverManager.chromedriver().setup();
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    break;
+                case "edge":
+                    WebDriverManager.edgedriver().setup();
+                    break;
+                default:
+                    throw new Exception(String.format("Auto setup for %s browser not supported",browser));
+            }
         }
     }
 
     @BeforeTest
     @Parameters("browser")
-    protected void setupTestBase(@Optional("chrome")String browser) {
-        if(!DEBUG_FLAG)
-            try{
-                if (browser.equalsIgnoreCase("chrome")){
-                    driver = new RemoteWebDriver(new URL(url),new ChromeOptions());
-                }
-                else if(browser.equalsIgnoreCase("firefox")){
-                    driver = new RemoteWebDriver(new URL(url),new FirefoxOptions());
-                } else if(browser.equalsIgnoreCase("edge")){
-                    driver = new RemoteWebDriver(new URL(url),new EdgeOptions());
-                }
-                webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            } catch (MalformedURLException urlException){
-                System.out.println("Malformed url, please check url.");
-            }
+    protected void setupTestBase(@Optional("chrome")String browser) throws Exception {
+        if(DEBUG_LOCALLY_FLAG){
+            driver = getLocalDriverObject(browser);
+            driver.manage().window().maximize();
+        }
+        if(!DEBUG_LOCALLY_FLAG){
+            driver = getRemoteDriverObject(browser);
+        }
+        if(driver == null){
+            throw new Exception("Driver was not initialized");
+        }
+        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     @AfterMethod
-    protected void wrapUp(ITestResult result) throws IOException {
+    protected void takeScreenshotsOfFailedMethod(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE){
             takeScreenshot(this.driver, result.getName());
         }
     }
 
-    @AfterTest
-    protected void quitBrowser(){
+    @AfterClass
+    protected void wrapUp(){
         if (driver != null){
             driver.quit();
         }
     }
 
-
-    public static void takeScreenshot(WebDriver driver, String testName) throws IOException {
+    private static void takeScreenshot(WebDriver driver, String testName) throws IOException {
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy,HH-mm-ss-SSS");
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile,
@@ -98,4 +97,32 @@ public abstract class TestBase {
                                 testName)
                 ));
     }
+
+    private static WebDriver getLocalDriverObject(String browser) throws Exception {
+        return switch (browser) {
+            case "chrome" -> {
+                ChromeOptions chromeOptions = new ChromeOptions();
+                yield new ChromeDriver(chromeOptions);
+            }
+            case "firefox" -> {
+                FirefoxOptions firefoxOptions = new FirefoxOptions();
+                yield new FirefoxDriver(firefoxOptions);
+            }
+            case "edge" -> {
+                EdgeOptions edgeOptions = new EdgeOptions();
+                yield new EdgeDriver(edgeOptions);
+            }
+            default -> throw new Exception("Browser not supported for local run.");
+        };
+    }
+
+    private static WebDriver getRemoteDriverObject(String browser) throws Exception {
+        return switch (browser) {
+            case "chrome" -> new RemoteWebDriver(new URL(URL), new ChromeOptions());
+            case "firefox" -> new RemoteWebDriver(new URL(URL), new FirefoxOptions());
+            case "edge" -> new RemoteWebDriver(new URL(URL), new EdgeOptions());
+            default -> throw new Exception("Browser not supported for remote run.");
+        };
+    }
+
 }
