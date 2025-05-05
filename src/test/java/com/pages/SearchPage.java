@@ -36,15 +36,12 @@ public class SearchPage extends PageBase{
     }
 
     public String getPageContentTitle() {
-        Reporter.log("Getting page content title...");
         return webDriverWait.until(ExpectedConditions.visibilityOf(pageContentTitle)).getText();
     }
 
     public void clickListButton(){
-        Reporter.log("Clicking list button...");
         webDriverWait.until(ExpectedConditions.elementToBeClickable(listButton)).click();
         webDriverWait.until(ExpectedConditions.attributeContains(listButton,"class","active"));
-        Reporter.log("List button was clicked.");
     }
 
     public List<WebElement> getProductsElements(){
@@ -52,7 +49,6 @@ public class SearchPage extends PageBase{
     }
 
     public boolean isProductsListView(){
-        Reporter.log("Getting products as elements...");
         List<WebElement> productsElements = getProductsElements();
         for(WebElement e: productsElements){
             if(!e.getAttribute("class").contains("product-list"))
@@ -83,7 +79,8 @@ public class SearchPage extends PageBase{
         int nthChild=2;// number of div tag child
         while (iter.hasNext()){
             current = iter.next();
-            // The tested site doesn't have test-ids or regular ids to use instead of xpath, full xpaths used instead.
+            // The tested site doesn't have test-ids or regular ids to use instead of xpath,
+            // full xpaths used instead.
             // Get name of current product on the list
             String currentProductNameXpath = "//*[@id='content']/div[3]/div["+nthChild+"]//div[1]/h4/a";
             String currentName = current.findElement(By.xpath(currentProductNameXpath)).getText();

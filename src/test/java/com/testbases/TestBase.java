@@ -25,7 +25,7 @@ import java.time.format.DateTimeFormatter;
 
 public abstract class TestBase {
 
-    protected WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     protected WebDriverWait webDriverWait;
     // Url for selenium grid hub
     private static final String URL = "http://localhost:4444/wd/hub";
@@ -58,30 +58,33 @@ public abstract class TestBase {
     @Parameters("browser")
     protected void setupTestBase(@Optional("chrome")String browser) throws Exception {
         if(DEBUG_LOCALLY_FLAG){
-            driver = getLocalDriverObject(browser);
-            driver.manage().window().maximize();
+            driver.set(getLocalDriverObject(browser));
+            getDriver().manage().window().maximize();
         }
         if(!DEBUG_LOCALLY_FLAG){
-            driver = getRemoteDriverObject(browser);
+            driver.set(getRemoteDriverObject(browser));
         }
-        if(driver == null){
+        if(getDriver() == null){
             throw new Exception("Driver was not initialized");
         }
-        webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        webDriverWait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
     }
 
     @AfterMethod
     protected void takeScreenshotsOfFailedMethod(ITestResult result) throws IOException {
         if (result.getStatus() == ITestResult.FAILURE){
-            takeScreenshot(this.driver, result.getName());
+            takeScreenshot(getDriver(), result.getName());
         }
     }
 
     @AfterClass
     protected void wrapUp(){
-        if (driver != null){
-            driver.quit();
-        }
+        driver.get().close();
+        driver.remove();
+    }
+
+    public WebDriver getDriver(){
+        return driver.get();
     }
 
     private static void takeScreenshot(WebDriver driver, String testName) throws IOException {
@@ -91,7 +94,7 @@ public abstract class TestBase {
                 new File(
                         String.format("%s\\screenshots\\%s-%s.png",
                                 System.getProperty("user.dir"),
-                                java.time.LocalDateTime.now().atZone(ZoneId.systemDefault()).format(dateTimeFormatter).toString(),
+                                java.time.LocalDateTime.now().atZone(ZoneId.systemDefault()).format(dateTimeFormatter),
                                 testName)
                 ));
     }
