@@ -35,7 +35,7 @@ pipeline {
   post{
     always{
       script {
-          bat 'docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1'
+          sh 'docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1'
         }
       }
     }
