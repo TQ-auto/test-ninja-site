@@ -24,7 +24,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public abstract class TestBase {
-
+    // Ensures thread safety
     private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     protected WebDriverWait webDriverWait;
     // Url for selenium grid hub

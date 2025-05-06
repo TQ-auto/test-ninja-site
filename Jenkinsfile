@@ -2,8 +2,8 @@ pipeline {
   agent any
     tools {
     // Install Maven and Jdk version configured as “M3” & “JDK”, add it to the path.
-      maven ‘M3’
-      jdk ‘JDK’
+      maven ‘Maven-installation’
+      jdk ‘java-JDK’
     }
 
   stages {
@@ -25,8 +25,8 @@ pipeline {
     
     stage(‘Test code’){
       steps{
-            bat “mvn compile”
-            bat “mvn clean test ”
+            bat 'mvn compile'
+            bat 'mvn clean test'
           }
         }
       }
@@ -34,7 +34,7 @@ pipeline {
   post{
     always{
       script {
-          bat ‘docker stop {images name}’
+          bat ‘docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1’
         }
       }
     }
