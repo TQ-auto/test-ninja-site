@@ -119,7 +119,11 @@ public abstract class TestBase {
 
     private static WebDriver getRemoteDriverObject(String browser) throws Exception {
         return switch (browser) {
-            case "chrome" -> new RemoteWebDriver(new URL(URL), new ChromeOptions());
+            case "chrome" -> new RemoteWebDriver(new URL(URL), new ChromeOptions().addArguments("start-maximized")
+            .addArguments("ignore-certificate-errors")
+            .addArguments("--disable-dev-shm-usage")
+            .addArguments("--no-sandbox")
+            .addArguments("--disable-popup-blocking"));
             case "firefox" -> new RemoteWebDriver(new URL(URL), new FirefoxOptions());
             case "edge" -> new RemoteWebDriver(new URL(URL), new EdgeOptions());
             default -> throw new Exception("Browser not supported for remote run.");
