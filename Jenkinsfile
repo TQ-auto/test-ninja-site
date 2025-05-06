@@ -3,7 +3,7 @@ pipeline {
     tools {
     // Install Maven and Jdk version configured as “M3” & “JDK”, add it to the path.
       maven 'Maven-installation'
-      jdk 'java-JDK'
+      jdk 'Java-JDK'
     }
 
   stages {
