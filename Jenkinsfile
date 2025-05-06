@@ -2,12 +2,12 @@ pipeline {
   agent any
     tools {
     // Install Maven and Jdk version configured as “M3” & “JDK”, add it to the path.
-      maven ‘Maven-installation’
-      jdk ‘java-JDK’
+      maven 'Maven-installation'
+      jdk 'java-JDK'
     }
 
   stages {
-    stage(‘Checkout Code’) {
+    stage('Checkout Code') {
       steps {
         // Get code from a GitHub repository
         git branch: 'main',
@@ -15,15 +15,15 @@ pipeline {
       }
     }
 
-    stage(‘Start Docker and Pull Images’) {
+    stage('Start Docker and Pull Images') {
       steps {
           script {
-            bat ‘docker-compose -f docker-compose.yml up -d’
+            bat 'docker-compose -f docker-compose.yml up -d'
           }
         }
       }
     
-    stage(‘Test code’){
+    stage('Test code'){
       steps{
             bat 'mvn compile'
             bat 'mvn clean test'
@@ -34,7 +34,7 @@ pipeline {
   post{
     always{
       script {
-          bat ‘docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1’
+          bat 'docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1'
         }
       }
     }
