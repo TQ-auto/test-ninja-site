@@ -11,7 +11,7 @@ pipeline {
       steps {
         // Get code from a GitHub repository
         git branch: 'main',
-            credentialsId: 'JenkinsToken',
+            credentialsId: '8efcb49c-3964-4e78-8392-e59cdcd00457',
             url: 'https://github.com/TQ-auto/test-ninja-site.git'
       }
     }
