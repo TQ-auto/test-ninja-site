@@ -19,15 +19,15 @@ pipeline {
     stage('Start Docker and Pull Images') {
       steps {
           script {
-            bat 'docker-compose up'
+            sh 'docker-compose up'
           }
         }
       }
     
     stage('Test code'){
       steps{
-            bat 'mvn compile'
-            bat 'mvn clean test'
+            sh 'mvn compile'
+            sh 'mvn clean test'
           }
         }
       }
