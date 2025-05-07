@@ -19,7 +19,7 @@ pipeline {
     stage('Start Docker and Pull Images') {
       steps {
           script {
-            bat 'docker-compose -f docker-compose.yml up -d'
+            bat 'docker-compose -f docker-compose.yaml up -d'
           }
         }
       }
@@ -35,7 +35,7 @@ pipeline {
   post{
     always{
       script {
-          sh 'docker stop testninjasite-selenium-hub-1 testninjasite-edge-1 testninjasite-chrome-1 testninjasite-firefox-1'
+          sh 'docker-compose down'
         }
       }
     }

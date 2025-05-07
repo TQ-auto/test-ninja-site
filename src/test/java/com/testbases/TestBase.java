@@ -33,26 +33,26 @@ public abstract class TestBase {
     private static final boolean DEBUG_LOCALLY_FLAG = false;
 
     // For local runs only
-    @BeforeClass
-    @Parameters("browser")
-    protected void autoSetupDriver(@Optional("chrome")String browser) throws Exception {
-        // If DEBUG mode is on, run this
-        if(DEBUG_LOCALLY_FLAG) {
-            switch (browser) {
-                case "chrome":
-                    WebDriverManager.chromedriver().setup();
-                    break;
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    break;
-                case "edge":
-                    WebDriverManager.edgedriver().setup();
-                    break;
-                default:
-                    throw new Exception(String.format("Auto setup for %s browser not supported",browser));
-            }
-        }
-    }
+//    @BeforeClass
+//    @Parameters("browser")
+//    protected void autoSetupDriver(@Optional("chrome")String browser) throws Exception {
+//        // If DEBUG mode is on, run this
+//        if(DEBUG_LOCALLY_FLAG) {
+//            switch (browser) {
+//                case "chrome":
+//                    WebDriverManager.chromedriver().setup();
+//                    break;
+//                case "firefox":
+//                    WebDriverManager.firefoxdriver().setup();
+//                    break;
+//                case "edge":
+//                    WebDriverManager.edgedriver().setup();
+//                    break;
+//                default:
+//                    throw new Exception(String.format("Auto setup for %s browser not supported",browser));
+//            }
+//        }
+//    }
 
     @BeforeTest
     @Parameters("browser")
