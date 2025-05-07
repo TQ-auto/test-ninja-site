@@ -15,13 +15,6 @@ pipeline {
             url: 'https://github.com/TQ-auto/test-ninja-site.git'
       }
     }
-    
-    stage('Initialize'){
-      steps{
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-      }
-    }
 
     stage('Start Docker and Pull Images') {
       steps {
@@ -37,7 +30,7 @@ pipeline {
             sh 'mvn clean test'
           }
         }
-      }
+    }
 
   post{
     always{
