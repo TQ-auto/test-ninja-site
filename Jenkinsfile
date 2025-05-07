@@ -15,6 +15,11 @@ pipeline {
             url: 'https://github.com/TQ-auto/test-ninja-site.git'
       }
     }
+    
+    stage('Initialize'){
+        def dockerHome = tool 'myDocker'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
 
     stage('Start Docker and Pull Images') {
       steps {
