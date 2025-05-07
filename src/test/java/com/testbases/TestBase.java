@@ -30,7 +30,7 @@ public abstract class TestBase {
     // Url for selenium grid hub
     private static final String URL = "http://localhost:4444/wd/hub";
     // To run tests locally, turn this flag on (true = running locally / false = remotely)
-    private static final boolean DEBUG_LOCALLY_FLAG = false;
+    private static final boolean DEBUG_LOCALLY_FLAG = true;
 
     // For local runs only
 //    @BeforeClass
