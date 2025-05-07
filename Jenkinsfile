@@ -19,7 +19,7 @@ pipeline {
     stage('Start Docker and Pull Images') {
       steps {
           script {
-            bat 'docker-compose -f docker-compose.yaml up -d'
+            bat 'docker-compose up'
           }
         }
       }
