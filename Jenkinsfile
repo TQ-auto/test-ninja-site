@@ -12,7 +12,7 @@ pipeline {
       steps {
         // Get code from a GitHub repository
         git branch: 'main',
-            credentialsId: '8efcb49c-3964-4e78-8392-e59cdcd00457',
+            credentialsId: 'git-key',
             url: 'https://github.com/TQ-auto/test-ninja-site.git'
       }
     }
