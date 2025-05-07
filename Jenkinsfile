@@ -4,6 +4,7 @@ pipeline {
     // Install Maven and Jdk version configured as “M3” & “JDK”, add it to the path.
       maven 'Maven-installation'
       jdk 'Java-JDK'
+      docker 'myDocker'
     }
 
   stages {
