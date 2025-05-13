@@ -9,7 +9,7 @@ public abstract class PageBase {
 
     protected WebDriver driver;
     protected WebDriverWait webDriverWait;
-    protected final String baseUrl = "https://tutorialsninja.com/demo/";
+    protected final String baseUrl = "https://www.saucedemo.com/";
 
     protected PageBase(WebDriver driver){
         this.driver = driver;
